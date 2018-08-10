@@ -16,9 +16,10 @@ class DosesController < ApplicationController
   end
 
   def destroy
-    @dose = Dose.find(params[:id])
+    @dose = Dose.find(params[:ingredient_id])
+    cocktail = @dose.cocktail
     @dose.destroy
-    redirect_to cocktails_path, :notice => "Your ingredient has been deleted"
+    redirect_to cocktail_path(cocktail.id) # , :notice => "Your ingredient has been deleted"
   end
 
   private

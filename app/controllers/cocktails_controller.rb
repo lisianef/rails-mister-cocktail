@@ -3,6 +3,9 @@ class CocktailsController < ApplicationController
     @cocktails = Cocktail.all
   end
 
+  def home
+  end
+
   def show
     @cocktail = Cocktail.find(params[:id])
   end

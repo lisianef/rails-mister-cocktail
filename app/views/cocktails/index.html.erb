@@ -11,15 +11,13 @@
 
 <div class="container">
   <div class="row">
-    <%= link_to "Add a new cocktail", new_cocktail_path%>
+    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-success btn-lg text-center"%>
     <div class="cocktails-cards">
-      <div class="col-xs-12">
-        <% @cocktails.each do |cocktail| %>
-          <div class="card"><%= link_to cocktail.name, cocktail_path(cocktail) %></div>
-        <% end %>
-      </div>
+      <% @cocktails.each do |cocktail| %>
+        <div class="col-xs-12 col-sm-4">
+          <%= link_to cocktail.name, cocktail_path(cocktail), class: "card" %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-
-
