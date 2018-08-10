@@ -11,11 +11,13 @@
 
 <div class="container">
   <div class="row">
-    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-success btn-lg text-center"%>
+    <%= link_to "Add a new cocktail", new_cocktail_path, class: "btn btn-success btn-lg"%>
     <div class="cocktails-cards">
       <% @cocktails.each do |cocktail| %>
         <div class="col-xs-12 col-sm-4">
-          <%= link_to cocktail.name, cocktail_path(cocktail), class: "card" %>
+          <%= link_to cocktail.name, cocktail_path(cocktail), class: "card",
+          style: cocktail.photo.present? ? "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)),
+         url('#{cl_image_path cocktail.photo, height: 300, width: 400, crop: :fill}')" : "background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('images/imgcocktail.jpg')" %>
         </div>
       <% end %>
     </div>

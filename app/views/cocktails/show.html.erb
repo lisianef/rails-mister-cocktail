@@ -1,10 +1,16 @@
 <h1>Your cocktail : <%= @cocktail.name %></h1>
 
 
-
+<div class="card-show text-center">
 <% @cocktail.ingredients.each do |ingredient| %>
-  <p><%= ingredient.name %></p>
+  <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+  <div class=><h4><%= ingredient.name %></h4>
   <%= link_to "Delete an ingredient", cocktail_path(@cocktail.id), method: :delete,
         data: { confirm: "Are you sure?" } %>
+  </div>
 <% end %>
+</div>
+<div>
 <%= link_to "Add new ingredient", new_cocktail_dose_path(@cocktail) %>
+<%= link_to "Back to cocktails", cocktails_path %>
+</div>

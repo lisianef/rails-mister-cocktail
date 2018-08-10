@@ -16,12 +16,8 @@ body {
 }
 
 .card {
-  // flex: 0 0 32%;
-  // width: 200px;
-  // height: 100px;
   background-color: grey;
-  // background-size: cover;
-  // background-position: center;
+  // background-image: cl_image_tag("sanfranciscobridge", width: 400, height: 300, crop: :fill);
   height: 150px;
   border-radius: 1px;
   margin: 15px 10px;
@@ -35,3 +31,6 @@ body {
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
 }
 
+.card-show {
+
+}
